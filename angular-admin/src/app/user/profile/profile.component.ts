@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  viewMode = 'about'
+  subViewMode = 'overview'
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.viewMode)
+    console.log(this.subViewMode)
   }
 
 }

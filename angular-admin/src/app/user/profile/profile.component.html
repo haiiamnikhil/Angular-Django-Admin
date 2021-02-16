@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="p_nav-link has-before" href="about.html">About</a>
+                                <a class="p_nav-link has-before" type="button" (click)="viewMode = 'about'">About</a>
                             </li>
                             <li>
                                 <a class="p_nav-link" href="gallery.html">Gallery</a>
@@ -97,7 +97,8 @@
                 </div>
                 <!-- End User Profile Nav -->
             </div>
-            <div class="mt-30">
+            <div [ngSwitch]="viewMode">
+            <div class="mt-30" *ngSwitchCase="'about'">
                 <!-- Profile Completion -->
                 <div class="profile-completion d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
@@ -154,24 +155,24 @@
                                 <nav>
                                     <div class="nav flex-md-column about-nav-tab">
 
-                                        <a class="active" id="nav-overview-tab" data-toggle="tab"
-                                            href="#nav-overview">Overview</a>
+                                        <a type="button" [class.active]="subViewMode == 'overview'" id="nav-overview-tab" data-toggle="tab"
+                                            (click)="subViewMode = 'overview'">Overview</a>
 
-                                        <a id="nav-work-tab" data-toggle="tab" href="#nav-work">Work</a>
+                                        <a id="nav-work-tab" data-toggle="tab" [class.active]="subViewMode == 'work'" type="button" (click)="subViewMode = 'work'">Work</a>
 
-                                        <a id="nav-education-tab" data-toggle="tab" href="#nav-education">Education</a>
+                                        <a id="nav-education-tab" data-toggle="tab" [class.active]="subViewMode == 'education'" type="button" (click)="subViewMode = 'education'">Education</a>
 
-                                        <a id="nav-basic-tab" data-toggle="tab" href="#nav-basic">Contact And Basic
+                                        <a id="nav-basic-tab" data-toggle="tab" [class.active]="subViewMode == 'contact'" type="button" (click)="subViewMode = 'contact'">Contact And Basic
                                             Info</a>
 
-                                        <a id="nav-skill-tab" data-toggle="tab" href="#nav-skill">Skills</a>
+                                        <a id="nav-skill-tab" data-toggle="tab" [class.active]="subViewMode == 'skills'" type="button" (click)="subViewMode = 'skills'">Skills</a>
                                     </div>
                                 </nav>
                             </div>
-
-                            <div class="col-md-9">
+                            <div [ngSwitch]="subViewMode">
+                            <div class="col-md-12">
                                 <div class="tab-content about-tab-content pl-md-5 mt-4 mt-md-0">
-                                    <div class="tab-pane fade show active" id="nav-overview" role="tabpanel">
+                                    <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" *ngSwitchDefault="'overview'">
                                         <!-- Overview -->
                                         <div class="overview">
                                             <h4 class="mb-3">Overview</h4>
@@ -249,7 +250,7 @@
                                         </div>
                                         <!-- End Overview -->
                                     </div>
-                                    <div class="tab-pane fade" id="nav-work" role="tabpanel">
+                                    <div class="tab-pane fade show active" id="nav-work" role="tabpanel" *ngSwitchCase="'work'">
                                         <h4 class="mb-3">Work</h4>
 
                                         <ul class="p_work-list list-unstyled">
@@ -1170,7 +1171,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-education" role="tabpanel">
+                                    <div class="tab-pane fade active show" id="nav-education" role="tabpanel" *ngSwitchCase="'education'">
                                         <h4 class="mb-3">Education</h4>
 
                                         <ul class="p_education-list list-unstyled">
@@ -2198,7 +2199,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-basic" role="tabpanel">
+                                    <div class="tab-pane fade active show" id="nav-basic" role="tabpanel" *ngSwitchCase="'contact'">
                                         <!-- Personal Info -->
                                         <div class="personal-info">
                                             <h4 class="mb-3">Personal Information</h4>
@@ -2216,7 +2217,7 @@
                                         </div>
                                         <!-- End Personal Info -->
                                     </div>
-                                    <div class="tab-pane fade" id="nav-skill" role="tabpanel">
+                                    <div class="tab-pane fade active show" id="nav-skill" role="tabpanel" *ngSwitchCase="'skills'">
                                         <!-- Skill -->
                                         <div class="skill">
                                             <h4 class="mb-3">Skill</h4>
@@ -2268,10 +2269,12 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
                 <!-- End Card -->
             </div>
+        </div>
         </div>
     </div>
 </div>
