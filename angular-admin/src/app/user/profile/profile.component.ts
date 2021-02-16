@@ -12,8 +12,6 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.viewMode)
-    console.log(this.subViewMode)
   }
 
 }

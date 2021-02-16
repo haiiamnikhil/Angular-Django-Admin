@@ -1,10 +1,18 @@
-<div class="wrapper">
-    <app-header></app-header>
-    <div class="main-wrapper">
-        <app-sidebar></app-sidebar>
-        <div class="main-content">
-            <div class="container-fluid">
-                <router-outlet></router-outlet>
+<div [ngSwitch]="router.url">
+    <div *ngSwitchCase="'/login'">
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngSwitchCase="'/register'">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="wrapper" *ngSwitchDefault>
+        <app-header></app-header>
+        <div class="main-wrapper">
+            <app-sidebar></app-sidebar>
+            <div class="main-content">
+                <div class="container-fluid">
+                    <router-outlet></router-outlet>
+                </div>
             </div>
         </div>
     </div>

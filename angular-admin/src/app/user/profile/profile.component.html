@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="p_nav-link has-before" type="button" (click)="viewMode = 'about'">About</a>
+                                <a class="p_nav-link has-before" type="button" [class.active]="viewMode == 'about'" (click)="viewMode = 'about'">About</a>
                             </li>
                             <li>
                                 <a class="p_nav-link" href="gallery.html">Gallery</a>
