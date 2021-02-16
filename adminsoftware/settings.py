@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ REST_FRAMEWORK = {
 
 
 WSGI_APPLICATION = 'adminsoftware.wsgi.application'
-# AUTH_USER_MODEL = 'api.UserModel'
+AUTH_USER_MODEL = 'api.UserModel'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

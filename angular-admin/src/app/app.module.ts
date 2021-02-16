@@ -11,6 +11,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListusersComponent } from './user/listusers/listusers.component';
+import { ForgotpasswordComponent } from './user/forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListusersComponent } from './user/listusers/listusers.component';
     RegisterComponent,
     ProfileComponent,
     DashboardComponent,
-    ListusersComponent
+    ListusersComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
