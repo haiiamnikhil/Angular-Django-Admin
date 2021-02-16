@@ -10,6 +10,9 @@ def Dashboard(request):
 def UserProfile(request):
     return render(request,"userprofile.html")
 
+def ListUsersView(request):
+    return render(request,"listusers.html")
+
 
 def LoginUserView(request):
     return render(request,"login.html")

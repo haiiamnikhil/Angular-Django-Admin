@@ -1,3 +1,4 @@
+import { ListusersComponent } from './user/listusers/listusers.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './user/profile/profile.component';
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'user/profile',
     component: ProfileComponent
   },
+  {
+    path: 'user/listusers',
+    component: ListusersComponent
+  }
 ];
 
 @NgModule({
