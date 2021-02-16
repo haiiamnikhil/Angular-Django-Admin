@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from .models import *
 
-# Create your views here.
+
+def Dashboard(request):
+    return render(request, 'dashboard.html')
+
+
+def UserProfile(request):
+    return render(request,"userprofile.html")
