@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,6 +12,8 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListusersComponent } from './user/listusers/listusers.component';
 import { ForgotpasswordComponent } from './user/forgotpassword/forgotpassword.component';
+import { ApiService } from './service/apiservice.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { ForgotpasswordComponent } from './user/forgotpassword/forgotpassword.co
     ForgotpasswordComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,14 @@
+.tab-pane {
+	animation-name: fade-in;
+	animation-fill-mode: both;
+	animation-duration: 1.2s;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.card {
+    transition:height 3s;
+}

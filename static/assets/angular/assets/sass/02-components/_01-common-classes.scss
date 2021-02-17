@@ -930,7 +930,8 @@ sub, sup {
 }
 
 .mn-vh-100 {
-    min-height: calc(100vh - 70px) !important;
+    // min-height: calc(100vh - 70px) !important;
+    height:100vh;
 }
 
 .bg-primary {

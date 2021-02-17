@@ -1,5 +1,5 @@
-<div [ngSwitch]="router.url">
-    <div *ngSwitchCase="'/login'">
+<div class="auth" [ngSwitch]="router.url">
+    <div class="credentials" *ngSwitchCase="'/login'">
         <router-outlet></router-outlet>
     </div>
     <div *ngSwitchCase="'/register'">
@@ -16,7 +16,7 @@
             </div>
         </div>
         <footer class="footer">
-            Dashmin © 2020 created by <a href="#"> Nikhil Pradeep</a>
+            Dashmin © 2020 created by <a href="#">  Nikhil Pradeep</a>
          </footer>
     </div>
 </div>

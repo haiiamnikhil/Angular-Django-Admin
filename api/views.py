@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
+from django.contrib.auth import authenticate, login
 
 
 def Dashboard(request):
@@ -13,9 +16,23 @@ def UserProfile(request):
 def ListUsersView(request):
     return render(request,"listusers.html")
 
-
+@csrf_exempt
 def LoginUserView(request):
     return render(request,"login.html")
+
+@csrf_exempt
+def LoginAuth(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            return JsonResponse({'message': 'User Already Loged In'},safe=False,status=200)
+        else:
+            data = JSONParser().parse(request)
+            user = authenticate(username=data['username'],password=data['password'])
+            if user:
+                login(request, user)
+                return JsonResponse({'message': 'Login successful','status': True},safe=False,status=200)
+            else:
+                return JsonResponse({'message':'Login Failed','status':False},safe=False,status=200)
 
 
 def RegisterUserView(request):

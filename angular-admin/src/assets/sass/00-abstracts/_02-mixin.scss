@@ -1,12 +1,12 @@
 // Color
 @mixin colors($color, $class) {
-    .#{$class} {
+    .#{""+$class} {
         color: $color;
     }
-    .#{$class}-bg {
+    .#{""+$class}-bg {
         background-color: $color;
     }
-    .#{$class}-bo {
+    .#{""+$class}-bo {
         border-color: $color !important;
     }
 }

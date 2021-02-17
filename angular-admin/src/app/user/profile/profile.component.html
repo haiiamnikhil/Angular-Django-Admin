@@ -169,10 +169,10 @@
                                     </div>
                                 </nav>
                             </div>
-                            <div [ngSwitch]="subViewMode">
+                            <div class="details" >
                             <div class="col-md-12">
                                 <div class="tab-content about-tab-content pl-md-5 mt-4 mt-md-0">
-                                    <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" *ngSwitchDefault="'overview'">
+                                    <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" *ngIf="subViewMode == 'overview'">
                                         <!-- Overview -->
                                         <div class="overview">
                                             <h4 class="mb-3">Overview</h4>
@@ -250,7 +250,8 @@
                                         </div>
                                         <!-- End Overview -->
                                     </div>
-                                    <div class="tab-pane fade show active" id="nav-work" role="tabpanel" *ngSwitchCase="'work'">
+                                    <div class="tab-pane fade show active" id="nav-work" role="tabpanel"  *ngIf="subViewMode == 'work'">
+                                        <div class="work">
                                         <h4 class="mb-3">Work</h4>
 
                                         <ul class="p_work-list list-unstyled">
@@ -1170,8 +1171,10 @@
                                                 <!-- End Work Update From -->
                                             </li>
                                         </ul>
+                                        </div>
                                     </div>
-                                    <div class="tab-pane fade active show" id="nav-education" role="tabpanel" *ngSwitchCase="'education'">
+                                    <div class="tab-pane fade active show" id="nav-education" role="tabpanel"  *ngIf="subViewMode == 'education'">
+                                        <div class="education">
                                         <h4 class="mb-3">Education</h4>
 
                                         <ul class="p_education-list list-unstyled">
@@ -2199,7 +2202,8 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="tab-pane fade active show" id="nav-basic" role="tabpanel" *ngSwitchCase="'contact'">
+                                    </div>
+                                    <div class="tab-pane fade active show" id="nav-basic" role="tabpanel" *ngIf="subViewMode == 'contact'">
                                         <!-- Personal Info -->
                                         <div class="personal-info">
                                             <h4 class="mb-3">Personal Information</h4>
@@ -2217,7 +2221,7 @@
                                         </div>
                                         <!-- End Personal Info -->
                                     </div>
-                                    <div class="tab-pane fade active show" id="nav-skill" role="tabpanel" *ngSwitchCase="'skills'">
+                                    <div class="tab-pane fade active show" id="nav-skill" role="tabpanel" *ngIf="subViewMode == 'skills'">
                                         <!-- Skill -->
                                         <div class="skill">
                                             <h4 class="mb-3">Skill</h4>
