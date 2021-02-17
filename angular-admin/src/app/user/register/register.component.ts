@@ -30,23 +30,25 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(){
-    let credetials = {
-      username:this.username,
-      password:this.password,
-      email:this.email,
-      first_name:this.first_name,
-      last_name:this.last_name
-    }
-    this.api.register(credetials).subscribe(response=>{
-      if(response.status){
-        this.router.navigate(['/login'])
+    if(this.password == this.confirmpassword){
+      let credetials = {
+        username:this.username,
+        password:this.password,
+        email:this.email,
+        first_name:this.first_name,
+        last_name:this.last_name
       }
-      this.message.push({message:response.message,status:response.status})
-    },
-    error=>{
-      this.router.navigate(['/register'])
+      this.api.register(credetials).subscribe(response=>{
+        if(response.status){
+          this.router.navigate(['/login'])
+        }
+        this.message.push({message:response.message,status:response.status})
+      },
+      error=>{
+        this.router.navigate(['/register'])
+      }
+      )
     }
-    )
-  }
-
+    this.message.push({message:"Passwords Not Matched"})
+    }
 }
