@@ -113,11 +113,11 @@
                          <!-- Main Header Time -->
                          <div class="main-header-date-time text-right">
                             <h3 class="time">
-                               <span id="hours">21</span>
-                               <span id="point">:</span>
-                               <span id="min">06</span>
+                               <span id="hours">{{now | date:'HH'}}</span>
+                               <span id="point">{{now | date:':'}}</span>
+                               <span id="min">{{now | date:'mm:ss'}}</span>
                             </h3>
-                            <span class="date"><span id="date">Tue, 12 October 2019</span></span>
+                            <span class="date"><span id="date">{{now | date}}</span></span>
                          </div>
                          <!-- End Main Header Time -->
                       </li>

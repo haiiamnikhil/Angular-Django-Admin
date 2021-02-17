@@ -15,6 +15,8 @@ import { ForgotpasswordComponent } from './user/forgotpassword/forgotpassword.co
 import { ApiService } from './service/apiservice.service';
 import { FormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+  
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

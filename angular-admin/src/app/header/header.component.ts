@@ -7,8 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  public now = new Date()
+  constructor() { 
+    setInterval(() => {
+      this.now = new Date()
+    },1)
+    }
 
   ngOnInit(): void {
   }
