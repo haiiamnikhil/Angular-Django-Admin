@@ -24,3 +24,6 @@ class UserModel(AbstractUser):
     organisation_sector = models.CharField(max_length=50,choices=ORG_CHOICES,null=True)
     organisation_domain = models.CharField(max_length=100,unique=False,null=True,blank=False) 
     gender = models.CharField(max_length=10,choices=GENDER_CHOICES)
+
+    def __str__(self):
+        return self.username

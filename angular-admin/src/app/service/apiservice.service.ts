@@ -20,4 +20,8 @@ export class ApiService {
   islogedin():Observable<any>{
     return this.http.post('/login-auth/',{headers:this.headers})
   }
+  
+  register(credetials:any):Observable<any>{
+    return this.http.post('/register-user/',credetials,{headers:this.headers})
+  }
 }
