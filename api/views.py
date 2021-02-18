@@ -4,7 +4,7 @@ from .models import *
 from .serializers import *
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 
 
@@ -52,3 +52,17 @@ def RegisterUser(request):
             UserModel.objects.create(username=data['username'],
             password=make_password(data['password']),email=data['email'], first_name=data['first_name'],last_name=data['last_name'])
             return JsonResponse({'message':"User Sucessfully Registerd",'status':True},safe=False,status=200)
+        
+def EmailView(request):
+    return render(request,'email/email.html')
+
+def ReadmailView(request):
+    return render(request,'email/read.html')
+
+def ComposeView(request):
+    return render(request,'email/compose.html')
+
+@csrf_exempt
+def LogoutUser(request):
+    logout(request)
+    return JsonResponse({'message':'User Logedout','status': True},safe=False,status=200)

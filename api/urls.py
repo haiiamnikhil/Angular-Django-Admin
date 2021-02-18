@@ -10,7 +10,13 @@ urlpatterns = [
 
     path('dashboard/',Dashboard,name='dashboard'),
     
+    path('email/',EmailView,name='emailview'),
+    path('email/readmail/',ReadmailView,name='readmail'),
+    path('email/compose/',ComposeView,name='readmail'),
+    
     path('user/profile/',UserProfile,name='userprofile'),
     
-    path('user/listusers/',ListUsersView,name='listusersview')
+    path('user/listusers/',ListUsersView,name='listusersview'),
+    
+    path('logout-user/',LogoutUser,name='logoutuser'),
 ]

@@ -14,6 +14,10 @@ import { ListusersComponent } from './user/listusers/listusers.component';
 import { ForgotpasswordComponent } from './user/forgotpassword/forgotpassword.component';
 import { ApiService } from './service/apiservice.service';
 import { FormsModule } from '@angular/forms';
+import { EmailComponent } from './email/email.component';
+import { InboxComponent } from './email/inbox/inbox.component';
+import { ComposeComponent } from './email/compose/compose.component';
+import { ReadComponent } from './email/read/read.component';
 
 
 
@@ -28,7 +32,11 @@ import { FormsModule } from '@angular/forms';
     ProfileComponent,
     DashboardComponent,
     ListusersComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    EmailComponent,
+    InboxComponent,
+    ComposeComponent,
+    ReadComponent
   ],
   imports: [
     HttpClientModule,

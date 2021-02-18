@@ -1,8 +1,8 @@
 <header class="header white-bg fixed-top d-flex align-content-center flex-wrap">
     <!-- Logo -->
     <div class="logo">
-       <a routerLink="/" class="default-logo"><img src="../static/img/weLogo.png" alt=""></a>
-       <a routerLink="/" class="mobile-logo"><img src="../static/img/weLogo.png" alt=""></a>
+       <a routerLink="/" class="default-logo"><img src="../static/img/logo.png" alt=""></a>
+       <a routerLink="/" class="mobile-logo"><img src="../static/img/mobile-logo.png" alt=""></a>
     </div>
     <!-- End Logo -->
 
@@ -15,7 +15,7 @@
                 <div class="main-header-left h-100 d-flex align-items-center">
                    <!-- Main Header User -->
                    <div class="main-header-user">
-                      <a href="#" class="d-flex align-items-center" data-toggle="dropdown">
+                      <a type="submit" class="d-flex align-items-center" data-toggle="dropdown">
                          <div class="menu-icon">
                             <span></span>
                             <span></span>
@@ -38,10 +38,10 @@
                          </div>
                       </a>
                       <div class="dropdown-menu">
-                         <a href="#">My Profile</a>
-                         <a href="#">task</a>
-                         <a href="#">Settings</a>
-                         <a href="#">Log Out</a>
+                         <a type="submit" routerLink="/user/profile">My Profile</a>
+                         <a type="submit">task</a>
+                         <a type="submit">Settings</a>
+                         <a type="submit" (click)="logout()">Log Out</a>
                       </div>
                    </div>
                    <!-- End Main Header User -->

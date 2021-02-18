@@ -24,4 +24,8 @@ export class ApiService {
   register(credetials:any):Observable<any>{
     return this.http.post('/register-user/',credetials,{headers:this.headers})
   }
+
+  logoutuser():Observable<any>{
+    return this.http.post('/logout-user/',{headers:this.headers})
+  }
 }
